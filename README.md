@@ -3,6 +3,8 @@ cutfd
 A tool to find cuts in audio using MASS.
 
 Requires having both the cut version and the original
+[![asciicast](https://asciinema.org/a/4uCPMdDb1WWMW8tB5Jy6HISzY.png)](https://asciinema.org/a/4uCPMdDb1WWMW8tB5Jy6HISzY)
+
 ## Getting started
 ### Convert to the required format
 The software currently only works with wav f32 one channel.
