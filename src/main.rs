@@ -8,6 +8,7 @@
 use clap::{arg, crate_description, crate_version, Command};
 use cutfd_lib::{find_beginning, find_cut};
 use parse_duration::parse;
+use terminal_spinners::{SpinnerBuilder, DOTS};
 
 fn format_time(time: f32) -> String {
     let milliseconds = (time % 1.0 * 1000.0) as usize;
@@ -54,12 +55,13 @@ fn main() {
         "Original is smaller or equal in size to the copy, consider checking the inputs"
     );
     if only_one {
+        println!("Cut:");
         let mut original = orig_samples;
         let mut copy = copy_samples;
-        let beginning = find_beginning(&mut original, &mut copy, 0, 0);
+        let beginning = find_beginning(&mut original, &mut copy, 0, 0).unwrap();
         let tot_seconds = beginning as f32 / 44100.0;
         let time_str = format_time(tot_seconds);
-        println!("Cut at {}", time_str);
+        println!("┌ {}", time_str);
 
         let length = &original.duration();
         let copy_len = &copy.duration();
@@ -67,16 +69,21 @@ fn main() {
         let end = beginning + difference;
         let tot_seconds = end as f32 / 44100.0;
         let time_str = format_time(tot_seconds);
-        println!("Cut at {}", time_str);
+        println!("└ {}", time_str);
     } else {
-        let vec_result = find_cut(orig_samples, copy_samples, window_len);
+        let handle = SpinnerBuilder::new()
+            .spinner(&DOTS)
+            .text(" Searching for cuts")
+            .start();
+        let vec_result = find_cut(orig_samples, copy_samples, window_len).unwrap();
+        handle.done();
         for [beginning, end] in vec_result {
             let tot_seconds = beginning as f32 / 44100.0;
             let time_str = format_time(tot_seconds);
-            println!("Cut at {}", time_str);
+            println!("┌ {}", time_str);
             let tot_seconds = end as f32 / 44100.0;
             let time_str = format_time(tot_seconds);
-            println!("Cut end at {}", time_str);
+            println!("└ {}", time_str);
         }
     }
 }

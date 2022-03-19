@@ -2,7 +2,7 @@
 name = "cutfd"
 authors = ["Ryu <ryu@tpgjbo.xyz>"]
 description = "Find cuts in audio"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -12,3 +12,4 @@ hound = "3.4.0"
 clap = {version = "3.1.2", features = ["cargo"]}
 parse_duration = "2.1.0"
 cutfd_lib = {path = "./cutfd_lib"}
+terminal-spinners = "0.3.2"

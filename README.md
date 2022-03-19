@@ -3,7 +3,7 @@ cutfd
 A tool to find cuts in audio using MASS.
 
 Requires having both the cut version and the original
-[![asciicast](https://asciinema.org/a/4uCPMdDb1WWMW8tB5Jy6HISzY.png)](https://asciinema.org/a/4uCPMdDb1WWMW8tB5Jy6HISzY)
+[![asciicast](https://asciinema.org/a/g3lP8QjImxZpIjiAMKGnaCxoB.svg)](https://asciinema.org/a/g3lP8QjImxZpIjiAMKGnaCxoB?autoplay=1)
 
 ## Getting started
 ### Convert to the required format
@@ -16,8 +16,12 @@ ffmpeg -i file.ext -acodec pcm_f32le -ac 1 -ar 44100 file.wav
 ```bash
 cutfd --original file.wav --copy file_copy.wav
 # output:
-# Cut at 1:12:21.133
-# Cut end at 1:12:36.783
+# ✔  Searching for cuts
+# ┌ 1:49:59.15
+# └ 1:52:22.314
+# ┌ 2:29:59.78
+# └ 2:30:16.878
+
 ```
 ## Installation
 Download from the releases: https://github.com/Ryu1845/cutfd/releases

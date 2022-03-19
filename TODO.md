@@ -1,6 +1,6 @@
 - [x] Make the submodule work
-- [ ] Add proper test
-- [ ] Test file with multiple cuts
-- [ ] Factorize find_cut 
+- [x] Factorize find_cut 
+- [x] Add proper test
+- [x] Test file with multiple cuts
 - [ ] Switch to ffmpeg-next for decoding
 - [ ] Detect silence
