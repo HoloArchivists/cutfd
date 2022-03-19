@@ -29,6 +29,6 @@ If you're on Linux
 If you're on windows, just download it and use the path of the file instead of `cutfd` in the examples.
 
 ## Roadmap
-- [] convert input files automatically
-- [] detect silences
-- [] write cut parts to separate files
+- [ ] convert input files automatically
+- [ ] detect silences
+- [ ] write cut parts to separate files
