@@ -1,4 +1,4 @@
-- [ ] Make the submodule work
+- [x] Make the submodule work
 - [ ] Add proper test
 - [ ] Test file with multiple cuts
 - [ ] Factorize find_cut 
