@@ -4,3 +4,4 @@
 - [x] Test file with multiple cuts
 - [ ] Switch to ffmpeg-next for decoding
 - [ ] Detect silence
+- [ ] Write cut parts to separate files
